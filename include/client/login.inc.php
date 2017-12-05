@@ -6,13 +6,8 @@ $passwd=Format::input($_POST['lpasswd']?:$_GET['t']);
 
 $content = Page::lookupByType('banner-client');
 
-if ($content) {
-    list($title, $body) = $ost->replaceTemplateVariables(
-        array($content->getName(), $content->getBody()));
-} else {
-    $title = __('Sign In');
-    $body = __('To better serve you, we encourage our clients to register for an account and verify the email address we have on record.');
-}
+$title = __('Sign In');
+$body = __('To better serve you, we encourage our clients to register for an account and verify the email address we have on record.');
 
 ?>
 <h1><?php echo Format::display($title); ?></h1>
